@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy &middot; Juice Factory</title>
+<meta name="description" content="How Juice Factory handles your data: your save stays in your browser, and Google AdSense shows ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;800&display=swap">
+<style>
+:root{
+  --bg:#FFF4C9; --panel:#FFFFFF; --ink:#2D1A0A; --muted:#7D5F37; --line:#F0D98C;
+  --orange-deep:#D9530A; --leaf:#2E9A47;
+  --display:"Lilita One","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
+  --body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1C1209; --panel:#2A1B0D; --ink:#FFF0D2; --muted:#CDA977; --line:#4B331B;
+  --orange-deep:#FF6A00; --leaf:#4CC46A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1C1209; --panel:#2A1B0D; --ink:#FFF0D2; --muted:#CDA977; --line:#4B331B;
+  --orange-deep:#FF6A00; --leaf:#4CC46A; color-scheme:dark}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:680px;margin:0 auto}
+a{color:var(--orange-deep);font-weight:700}
+.back{font-weight:800;text-decoration:none}
+.back:hover{text-decoration:underline}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,6vw,44px);line-height:1.05;margin:18px 0 4px;color:var(--orange-deep);text-wrap:balance}
+.updated{color:var(--muted);font-weight:700;font-size:14px;margin:0 0 20px}
+.card{background:var(--panel);border:3px solid var(--ink);border-radius:20px;padding:6px 22px 14px}
+h2{font-family:var(--display);font-weight:400;font-size:22px;margin:22px 0 4px;color:var(--leaf)}
+p,ul{margin:6px 0}
+ul{padding-left:1.2em}
+li{margin:4px 0}
+.card{overflow-wrap:anywhere}
+footer{margin-top:28px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">&larr; Back to Juice Factory</a>
+  <h1>Privacy</h1>
+  <p class="updated">Last updated 27 October 2026</p>
+
+  <div class="card">
+    <h2>The short version</h2>
+    <p>Juice Factory has no accounts and doesn&rsquo;t collect your name, email or anything else about you. Your game is saved in your own browser. The game shows ads from Google, and Google uses cookies to do that.</p>
+
+    <h2>Your saved game</h2>
+    <p>Your progress (juice, money, machines, shops and upgrades) is saved in your browser&rsquo;s local storage on your device. It isn&rsquo;t sent to us or anyone else. Clearing your browser&rsquo;s site data, or pressing <b>Reset factory</b> in the game, deletes it.</p>
+
+    <h2>Ads</h2>
+    <p>Juice Factory shows ads from Google AdSense. Google and its partners use cookies and similar technology to show ads, measure them and prevent fraud. Depending on your choices, those ads can be based on your previous visits to this and other websites.</p>
+    <ul>
+      <li>Read how Google uses information from sites that show its ads: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+      <li>Turn personalised ads off, or manage them: <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">myadcenter.google.com</a></li>
+      <li>Opt out of other ad networks&rsquo; personalised ads: <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">aboutads.info/choices</a></li>
+    </ul>
+    <p>If you&rsquo;re in the European Economic Area, the UK or Switzerland, Google asks for your consent before using cookies for ads, and you can change your choice at any time.</p>
+
+    <h2>Other services the page uses</h2>
+    <ul>
+      <li><b>Google Fonts</b> supplies the lettering, so your browser fetches font files from Google.</li>
+      <li><b>Cloudflare</b> hosts the site and may keep standard server logs, such as IP addresses, to run and protect it.</li>
+      <li><b>Ko-fi</b> handles tips if you choose to leave one. That happens on Ko-fi&rsquo;s own site, under its privacy policy.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the date at the top will change too.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Get in touch through <a href="https://jason.schwarzenberger.co.nz/" target="_blank" rel="noopener">jason.schwarzenberger.co.nz</a>.</p>
+  </div>
+
+  <footer><a href="https://qot.nz/">Qot. games</a></footer>
+</div>
+</body>
+</html>

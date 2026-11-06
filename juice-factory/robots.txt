@@ -1,0 +1,10 @@
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: GoogleOther
+Allow: /ads.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://juice-factory.qot.nz/sitemap.xml

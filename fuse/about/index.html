@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Fuse 0xAC · Qot. games</title>
+<meta name="description" content="How to play Fuse 0xAC, a puzzle game about inspecting packets and keeping one number locked at 172.">
+<link rel="canonical" href="https://fuse.qot.nz/about/">
+<meta name="theme-color" content="#0b0f0d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="scan" aria-hidden="true"></div>
+<header class="topbar">
+  <div class="tb-left">
+    <a class="brand" href="/" aria-label="Fuse 0xAC home"><span class="brand-name">FUSE 0xAC</span></a>
+    <div class="fuse" aria-hidden="true"><span class="addr">0xAC ▸</span><span>172</span><span class="state">LOCKED</span></div>
+  </div>
+  <a class="kofi" href="https://ko-fi.com/jason_s13r" target="_blank" rel="noopener"><span class="kofi-long">Support on </span>Ko-fi</a>
+</header>
+<main>
+  <article class="prose">
+    <p class="back"><a href="/">← Back to the game</a></p>
+    <h1>About Fuse 0xAC</h1>
+    <p class="lede">Fuse 0xAC is a short puzzle game about guarding one number. Memory address <b>0xAC</b> holds the value <b>172</b>. Everyone wants it changed. You're the operator who decides what gets through.</p>
+    <p>It plays like a border checkpoint for data. Packets arrive one at a time. Each one asks to read memory, write memory, file a report or borrow the bus. You check it against the rulebook and press <b>Accept</b> or <b>Reject</b>. If you reject a packet, you also pick the rule it broke.</p>
+
+    <h2>How to play</h2>
+    <ul>
+      <li><b>Accept</b> packets that follow every rule. Rejecting an honest packet earns a citation and costs a few points.</li>
+      <li><b>Reject</b> packets that break a rule, and choose the reason. A correct reason earns full points. The right call with the wrong reason earns a little.</li>
+      <li>Let a hostile packet through and the fuse loses integrity. After three, it breaks and reads 173.</li>
+      <li>Correct calls in a row build a combo multiplier, up to ×4.</li>
+      <li>From day 2 you get one <b>honeypot</b> per shift. Use it on a packet you're sure is hostile for bonus points. Use it on an honest packet and it costs you.</li>
+      <li>Keyboard: <kbd>A</kbd> accept, <kbd>R</kbd> reject, number keys to pick a reason, <kbd>H</kbd> honeypot, <kbd>Esc</kbd> to cancel.</li>
+    </ul>
+
+    <h2>The week</h2>
+    <p>The campaign runs five days. Each day adds new rules, and the rulebook marks them so you can catch up.</p>
+    <ul>
+      <li><b>Day 1, Orientation.</b> The memory map: open userland, signed kernel space, and the fuse itself. Hex and decimal.</li>
+      <li><b>Day 2, Notation.</b> Octal and binary arrive, along with strings and decimals pretending to be numbers. The decoder tab helps.</li>
+      <li><b>Day 3, Evidence.</b> Reports, screenshots and quotes. Check each author's key in the dossier and compare the hashes.</li>
+      <li><b>Day 4, Signatures.</b> Issuers, expiry dates, revoked serials and look-alike names. The terminal is also acting up.</li>
+      <li><b>Day 5, The Bus.</b> Direct memory access requests that cover whole ranges at once, and one very official-looking override.</li>
+    </ul>
+    <p>Finish the week to unlock <b>endless mode</b>. Every rule is active, each shift brings a fresh grant code, and it keeps going until the fuse breaks.</p>
+
+    <h2>What it teaches, quietly</h2>
+    <p>Under the jokes, the game practises real ideas: the same number written in hexadecimal, octal, binary and decimal; the difference between a number and text that looks like one; checking where evidence came from rather than what it claims; and how certificates, expiry and revocation decide whether a signature means anything.</p>
+
+    <h2>Who made it</h2>
+    <p>Fuse 0xAC is made by Jason at <a href="https://qot.nz/">Qot. games</a>, a small collection of free browser games. It runs entirely in your browser, with no account and no sign-up. Your progress is saved on your own device.</p>
+    <p>If you enjoyed it, a tip on <a href="https://ko-fi.com/jason_s13r" target="_blank" rel="noopener">Ko-fi</a> helps keep the games online. Questions, bugs or ideas: <a href="mailto:jason@qot.nz">jason@qot.nz</a>.</p>
+  </article>
+</main>
+<footer class="site-footer">
+  <div class="inner">
+    <nav aria-label="Site">
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="https://qot.nz/">Qot. games</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

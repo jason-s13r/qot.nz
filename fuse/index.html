@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fuse 0xAC · keep 172 locked · Qot. games</title>
+<meta name="description" content="A puzzle game about guarding one number. Inspect incoming packets, decode hex, octal and binary, check signatures and keep address 0xAC locked at 172.">
+<link rel="canonical" href="https://fuse.qot.nz/">
+<meta name="theme-color" content="#0b0f0d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Qot. games">
+<meta property="og:title" content="Fuse 0xAC · keep 172 locked">
+<meta property="og:description" content="Inspect packets. Decode the hex. Reject the forgeries. Keep 0xAC at 172.">
+<meta property="og:url" content="https://fuse.qot.nz/">
+<meta property="og:image" content="https://fuse.qot.nz/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-512.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6757493813506328" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="tb-left">
+    <a class="brand" href="/" aria-label="Fuse 0xAC home"><span class="brand-name">FUSE 0xAC</span></a>
+    <div id="fuse-readout" class="fuse" role="status" aria-label="Fuse readout">
+      <span class="addr">0xAC ▸</span><span id="fuse-val">172</span><span id="fuse-state" class="state">LOCKED</span>
+    </div>
+  </div>
+  <div class="tb-hud">
+    <div id="hud" class="hud hud-hidden" aria-live="polite">
+      <span><span id="hud-day">DAY 1/5</span> · <span id="hud-date"></span></span>
+      <span>SCORE <b id="hud-score">0</b> <span id="hud-combo" class="combo"></span></span>
+      <span>INTEGRITY <span id="hud-pips" class="pips" role="img"></span></span>
+    </div>
+  </div>
+  <a class="kofi" href="https://ko-fi.com/jason_s13r" target="_blank" rel="noopener"><span class="kofi-long">Support on </span>Ko-fi</a>
+</header>
+
+<main>
+  <!-- Title -->
+  <section id="screen-title">
+    <div class="title-wrap">
+      <div>
+        <h1>FUSE<br><span>0xAC</span></h1>
+        <p class="tagline">One number. Keep it locked.</p>
+        <p class="pitch">Address 0xAC holds 172, and everyone wants it changed. Inspect each incoming packet, decode the hex, check the signatures and spot the forgeries. Let three bad packets through and the fuse breaks.</p>
+        <div class="title-actions">
+          <button id="btn-start" class="btn btn-primary" type="button">Start day 1 ▸</button>
+          <button id="btn-endless" class="btn" type="button">Endless mode</button>
+        </div>
+        <div id="title-days" class="title-days" aria-label="Choose a day"></div>
+        <p id="title-best" class="dim small"></p>
+      </div>
+      <pre id="boot" class="boot" aria-hidden="true"></pre>
+    </div>
+  </section>
+
+  <!-- Game -->
+  <section id="screen-game" hidden>
+    <div class="desk">
+      <div class="col-packet">
+        <div class="inbox-head"><span>INBOX</span><span id="queue-count"></span></div>
+        <article id="packet" class="packet" aria-live="polite"></article>
+        <div id="actions" class="actions">
+          <button id="btn-accept" class="btn btn-accept" type="button">ACCEPT<kbd>A</kbd></button>
+          <button id="btn-reject" class="btn btn-reject" type="button">REJECT<kbd>R</kbd></button>
+          <button id="btn-honey" class="btn btn-honey" type="button" hidden>🍯 HONEYPOT <span id="honey-left">1</span><kbd>H</kbd></button>
+        </div>
+        <div id="reasons" class="reasons" hidden></div>
+        <div id="log" class="log" aria-live="polite" aria-label="Console"></div>
+      </div>
+      <aside class="rulebook" aria-label="Rulebook">
+        <h2 class="rb-title">RULEBOOK</h2>
+        <div id="rb-tabs" class="rb-tabs" role="tablist"></div>
+        <div id="rb-panels" class="rb-panels"></div>
+      </aside>
+    </div>
+  </section>
+
+  <div id="overlay" class="overlay" hidden>
+    <div id="overlay-body" class="overlay-body" role="dialog" aria-modal="true"></div>
+  </div>
+</main>
+
+<!-- Ad unit (shared with juice-factory) -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6757493813506328" data-ad-slot="3752894709" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <nav aria-label="Site">
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="https://qot.nz/">Qot. games</a>
+    </nav>
+    <button id="btn-mute" class="sound-btn" type="button" aria-pressed="false">Sound: on</button>
+  </div>
+</footer>
+
+<script src="/game.js" defer></script>
+</body>
+</html>
