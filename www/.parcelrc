@@ -1,6 +1,7 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
+    "*.md": ["./parcel/markdown.transformer.js"],
     "*.pug": ["@parcel/transformer-pug"]
   },
   "namers": ["./parcel/stable-images.namer.js", "..."]

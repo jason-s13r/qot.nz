@@ -1,0 +1,29 @@
+//- content/games/*.md: hero from the frontmatter, then the screenshot and the text after <!--more-->.
+extends base.pug
+
+block vars
+  - var page = { title: `${doc.title} · Qot. games`, description: doc.description, path: doc.path, game: doc.slug }
+
+block head
+  if doc.share
+    meta(property="og:type" content="website")
+    meta(property="og:site_name" content="Qot. games")
+    meta(property="og:url" content=site.url + doc.path)
+    meta(property="og:title" content=page.title)
+    meta(property="og:description" content=doc.description)
+    meta(property="og:image" content=doc.share.image)
+    meta(property="og:image:width" content=doc.share.width)
+    meta(property="og:image:height" content=doc.share.height)
+    meta(property="og:image:alt" content=doc.share.alt)
+    meta(name="twitter:card" content="summary_large_image")
+
+block main
+  main
+    +gameHero(doc)
+      if doc.tagline
+        p.lede.tag!= doc.taglineHtml
+      p.lede!= doc.ledeHtml
+    article.prose
+      if doc.screenshot
+        +screenshot(doc.screenshot)
+      != doc.html

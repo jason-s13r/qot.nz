@@ -1,24 +1,26 @@
+//- Pieces shared by the layouts. A game here is a parsed content/games/*.md (see lib/content.js).
+
 mixin chips(game)
   .chips
     each chip in game.chips
       span.chip= chip
 
-//- A full game card, as on the home page.
+//- A full game card, as on the home page: the game's text before <!--more-->.
 mixin gameCard(game)
-  li(class=game.card)
+  li(class=`card ${game.card}`)
     .head-row
-      h2: a(href=`/games/${game.slug}`)!= game.name
+      h2: a(href=game.path)!= game.name
     +chips(game)
-    p!= game.blurb
+    != game.summary
     .foot
       span.host= game.host
       span.actions
-        a.more-link(href=`/games/${game.slug}`) About the game
+        a.more-link(href=game.path) About the game
         a.play(href=`https://${game.host}/`) Play
 
 //- The hero at the top of a game page. The block is the lede paragraphs.
 mixin gameHero(game)
-  section(class=`${game.card.replace(/^card /, 'card hero ')}`)
+  section(class=`card hero ${game.card}`)
     .head-row: h1!= game.name
     +chips(game)
     block
@@ -26,7 +28,7 @@ mixin gameHero(game)
       span.host= game.host
       a.play(href=`https://${game.host}/`) Play #{game.title}
 
-//- "All games", with the current game marked.
+//- "All games" under a game page, with the current game marked: each game's `short`.
 mixin moreGames(current)
   section.more(aria-labelledby="more-h")
     h2#more-h All games
@@ -34,20 +36,19 @@ mixin moreGames(current)
       each game in games
         li
           if game.slug === current
-            div(class=`${game.card} current` aria-current="page")
+            div(class=`card ${game.card} current` aria-current="page")
               .head-row: h3!= game.name
-              p!= game.short
+              p!= game.shortHtml
           else
-            a(class=game.card href=`/games/${game.slug}`)
+            a(class=`card ${game.card}` href=game.path)
               .head-row: h3!= game.name
-              p!= game.short
+              p!= game.shortHtml
 
-//- A screenshot that links to the full-size image at /games/img/<name>.
+//- A screenshot that links to the full-size image at /games/img/<file>.
 //- The link gets "?full" because Parcel drops an <a href> that points at the same file as an <img src>
 //- on the same page; the query makes it a separate asset, which parcel/stable-images.namer.js names.
-mixin screenshot(name, width, height, alt)
-  - const src = `~/src/images/${name}`
+mixin screenshot(shot)
+  - const src = `~/src/images/${shot.file}`
   figure.shot
-    a(href=`${src}?full`): img(src=src width=width height=height alt=alt decoding="async")
-    figcaption
-      block
+    a(href=`${src}?full`): img(src=src width=shot.width height=shot.height alt=shot.alt decoding="async")
+    figcaption!= shot.captionHtml

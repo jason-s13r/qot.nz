@@ -10,12 +10,5 @@
     { "name": "What&rsquo;s new", "url": "/updates" },
     { "name": "Contact", "url": "/contact" },
     { "name": "Privacy", "url": "/privacy" }
-  ],
-  "pages": [
-    { "path": "/", "lastmod": "2026-10-30" },
-    { "path": "/about", "lastmod": "2026-10-30" },
-    { "path": "/updates", "lastmod": "2026-10-30" },
-    { "path": "/contact", "lastmod": "2026-10-30" },
-    { "path": "/privacy", "lastmod": "2026-10-30" }
   ]
 }

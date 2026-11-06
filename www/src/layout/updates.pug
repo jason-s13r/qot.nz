@@ -1,0 +1,19 @@
+//- content/updates.md: the page's text, then every update, newest first, grouped by month.
+extends base.pug
+
+block vars
+  - var page = { title: `${doc.title} · Qot. games`, description: doc.description, path: doc.path }
+  - var months = updates.reduce((acc, u) => { const last = acc[acc.length - 1]; if (last && last.month === u.month) last.items.push(u); else acc.push({ month: u.month, items: [u] }); return acc; }, [])
+
+block main
+  main
+    h1.page-title!= doc.headingHtml
+    .prose
+      != doc.html
+      each group in months
+        h2= group.month
+        ul.log
+          each u in group.items
+            li
+              b: a(href=u.path)= u.title
+              | !{u.excerptHtml}

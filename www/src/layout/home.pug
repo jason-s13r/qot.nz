@@ -1,0 +1,12 @@
+//- content/index.md: the shelf of every game.
+extends base.pug
+
+block vars
+  - var page = { title: doc.title, description: doc.description, path: doc.path, fonts: games.flatMap((g) => g.fonts) }
+
+block main
+  main#games
+    h1.intro!= doc.headingHtml
+    ul.shelf
+      each g in games
+        +gameCard(g)

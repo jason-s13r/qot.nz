@@ -1,0 +1,109 @@
+---
+title: Juice Factory
+name: "Juice <span class=\"factory\">Factory</span>"
+order: 2
+card: "juice"
+tone: tone-juice
+fonts: ["Lilita+One"]
+chips: ["Clicker"]
+host: juice-factory.qot.nz
+lastmod: 2026-10-30
+description: "Juice Factory is a free clicker game about making juice: squeeze, sell by the cup, and build machines and shops. How it plays, tips, golden mangoes and saving."
+lede: "A clicker game about making juice. Start with one orange, squeeze it, sell it by the cup, and keep building until you’re running a juice empire."
+short: "A clicker game about making juice. Squeeze it, sell it, build a factory."
+screenshot:
+  file: juice-factory.jpg
+  width: 1200
+  height: 886
+  alt: "Juice Factory in a web browser: the orange and Sell a cup button on the left, levels, upgrades and machines on the right."
+  caption: "Squeeze the orange on the left, sell by the cup, and spend your money on the right."
+---
+
+A clicker game about making juice. You have a fruit and a dream: squeeze juice by hand, sell it by the cup, and pour the money back into better squeezers, machines and shops until the juice and the dollars really climb. There's always the next upgrade to save for.
+
+<!--more-->
+
+## What it is
+
+Juice Factory is a clicker game, the kind where you start with almost nothing and grow it into something enormous. You begin with one orange. Every tap squeezes out a little juice, and every cup you sell brings in a little money. Spend that money well and before long you have machines squeezing for you, shops selling for you, and numbers measured in kilolitres, then megalitres, then worse.
+
+It runs in your web browser on a phone, tablet or computer. There’s nothing to install and no account to make.
+
+## How it plays
+
+There are two things to look after: **juice** and **money**.
+
+1. **Squeeze.** Tap the orange to make juice. It starts at 1 mL a squeeze.
+2. **Sell.** Tap **Sell a cup** to sell a cup of juice. Juice sells for 10 cents a millilitre to start, so a 20 mL cup is worth $2.
+3. **Spend.** Everything in the game costs money: better squeezing, bigger cups, machines that make juice on their own, and shops that sell it on their own.
+
+The tank behind the orange fills up as you save towards the next thing you can’t quite afford yet, so you can always see what you’re working towards.
+
+## Squeeze and Shop
+
+Every card in the shop has a coloured strip that says what it helps. Orange **Squeeze** cards make more juice. Green **Shop** cards sell it for more money. The trick is keeping the two in balance. If your shops sell faster than you can squeeze, they sit around waiting, and the game tells you _Shops need more juice_. If your machines out-squeeze your shops, juice piles up unsold, and you’ll see _Juice is piling up. Build more shops!_
+
+## Levels
+
+Levels can be bought again and again. Each one costs more than the last.
+
+- **Extra Hands** (Squeeze) adds 1 mL to every squeeze.
+- **Strong Wrists** (Squeeze) doubles your squeeze. It stacks with Extra Hands, so the two together grow fast.
+- **Juicer’s Instinct** (Squeeze) adds 1% of what your machines make each second to every squeeze, so tapping stays worthwhile late in the game.
+- **Bigger Cups** (Shop) doubles how much one press of Sell a cup sells.
+- **Better Prices** (Shop) makes juice sell for 25% more.
+- **Sales Pitch** (Shop) adds 1% of what your shops earn each second to every cup you sell by hand.
+
+## Machines and shops
+
+Machines make juice by themselves and shops sell it by themselves, even while you’re not tapping. Each new one you buy costs 15% more than the last of its kind. The next one along stays a mystery (“???”) until you’re close to affording it.
+
+**Machines:** Hand Squeezer, Citrus Press, Backyard Orchard, Pressing Mill, Tropical Plantation, Juice Refinery, Orbital Orchard and the Citrus Singularity.
+
+**Shops:** Lemonade Stand, Juice Cart, Corner Dairy, Juice Bar, Supermarket Shelf, Delivery Vans, Airport Kiosks and Interplanetary Export.
+
+You can buy them one at a time, or in batches of 10 or 100. A batch of 10 costs 10% less than buying them one by one, and a batch of 100 costs 20% less, so saving up for a batch pays off.
+
+## Upgrades
+
+One-off upgrades appear as your factory grows. Each machine and shop has five of its own (Mk II, Turbo, Deluxe, Industrial and Quantum for machines; Makeover, Longer Hours, Express Lane, Superstore and Galactic for shops), and each one doubles what that machine or shop does. There are also factory-wide upgrades like Cold Press Tech and Night Shift for machines, Loyalty Cards and Online Ordering for shops, and price upgrades like Fancy Labels and Not From Concentrate.
+
+## Golden mangoes
+
+Every minute or two a golden mango floats across the press. Tap it before it disappears for one of four bonuses:
+
+- **Mango Frenzy:** machines make seven times as much juice for 60 seconds.
+- **Rush Hour:** juice sells for three times the price for 60 seconds.
+- **Pulp Rush:** every squeeze is worth 77 times as much for 13 seconds. Tap fast.
+- **Windfall:** someone buys a whole crate, and the money lands straight in your pocket.
+
+The **Mango Radar** upgrade makes golden mangoes turn up more often.
+
+## Tips
+
+- Buy a Hand Squeezer and a Lemonade Stand early. Juice and money that arrive while you’re not tapping add up quickly.
+- Bigger Cups is cheap and makes every tap of Sell a cup worth twice as much.
+- Watch the message under the Sell button. It tells you which side of the factory needs help.
+- Save Pulp Rush for when you can tap quickly: thirteen seconds of furious squeezing can be worth minutes of normal play.
+
+## Saving your game
+
+Your factory saves itself in your browser every few seconds, and again when you close or switch away from the tab. When you come back, your machines and shops catch up on up to 30 minutes of the time you were away, at half speed.
+
+The save lives in that one browser on that one device. Clearing your browser’s site data, or pressing **Reset factory** at the bottom of the game, starts you over. Safari can also clear a site’s saved data if you don’t visit it for about a week.
+
+## Questions
+
+Is it free?
+:   Yes. There’s an ad at the very bottom of the page, well away from the game, and a Ko-fi link if you’d like to say thanks.
+
+Do I need an account?
+:   No. Nothing about you is collected, and your save stays in your own browser.
+
+Can I move my factory to another device?
+:   Not yet. Each browser keeps its own factory.
+
+Where did the idea come from?
+:   It started as an idea for a Cookie Clicker-style game about juice, and grew from there with plenty of play-testing at home.
+
+More about how the game handles your data is on the [Juice Factory privacy page](https://juice-factory.qot.nz/privacy.html).

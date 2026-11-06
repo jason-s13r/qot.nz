@@ -21,25 +21,39 @@ pnpm test       # unit tests for both games
 pnpm build      # builds every site into its dist/
 ```
 
-In a site's folder:
+## Running a site locally
 
-```sh
-pnpm dev        # dev server with reload
-pnpm build      # production build into dist/
-pnpm preview    # serve dist/ with wrangler, the same way Cloudflare does
-```
+Two ways, from the repo root:
+
+| | qot.nz | Juice Factory | Fuse | Picture Puzzle |
+|---|---|---|---|---|
+| Dev server, reloads as you edit | `pnpm dev:www` → localhost:1234 | `pnpm dev:juice` → localhost:5173 | `pnpm dev:fuse` → localhost:5173 | |
+| Production build, served like Cloudflare | `pnpm preview:www` | `pnpm preview:juice` | `pnpm preview:fuse` | `pnpm preview:puzzle` |
+
+Preview builds the site and serves `dist/` with `wrangler dev` on localhost:8787. That's how the Worker serves it: `/about` from `about.html`, Fuse's 404 page and `_headers`. Use it to check a site before releasing. In a site's folder, `pnpm dev`, `pnpm build` and `pnpm preview` do the same.
+
+The qot.nz dev server builds pages only; `sitemap.xml` and the files in `public/` appear in the production build. Run two dev servers at once and Vite picks the next free port.
 
 ## How each site is laid out
 
 ### `www/` (qot.nz)
 
-- `src/pages/` has one Pug file per page. The output path follows the file: `src/pages/games/fuse.pug` becomes `/games/fuse`.
-- `src/layout/page.pug` is the shared shell, and `src/layout/mixins.pug` holds the game cards, hero, "All games" list and screenshots.
-- `src/data/games.json` lists every game in display order. The home page shelf, the "All games" list on each game page, the fonts and the sitemap all come from it. `src/data/site.json` has the site-wide links and the sitemap dates for the other pages.
-- `public/` is copied into `dist/` unchanged, for files that need fixed URLs (`ads.txt`, `robots.txt`, `/favicon.ico`, the Tessera share image).
-- `scripts/postbuild.mjs` copies `public/` and writes `sitemap.xml`.
+The words are in markdown under `content/`; the look is in Pug under `src/layout/`.
 
-To add a game: add it to `games.json`, add `src/pages/games/<slug>.pug` (copy an existing one), and put its screenshot in `src/images/`.
+- `content/` has one markdown file per page, and the output path follows the file: `content/about.md` is `/about`, `content/games/fuse.md` is `/games/fuse`, `content/index.md` is the home page.
+- Each file has YAML frontmatter (title, meta description, heading, `lastmod` for the sitemap) and a markdown body.
+- A game (`content/games/<slug>.md`) is split by `<!--more-->`:
+  - the body before it is the game's card on the home page;
+  - the body after it is the game page's article;
+  - frontmatter `lede` (and optional `tagline`) is the game page's hero, and `short` is its card in "All games" under every game page;
+  - frontmatter also holds the card colours (`card`, `tone`, `fonts`), `chips`, `host`, `order` on the shelf, the `screenshot`, and optional `share` image tags.
+- What's new is built from `content/updates/<slug>.md`, one file per update, each with its own page at `/updates/<slug>`. Frontmatter has the `title`, `date` (sorts the list, newest first, grouped by month) and `description`; the body's first paragraph is what the list shows. To post an update, add a file there.
+- Links off qot.nz open in a new tab automatically. Definition lists (`term` then `: definition`) and `{.class}` attributes are supported.
+- `src/layout/` has `base.pug` (the shell), one layout per kind of page (`home`, `game`, `update`, `updates`, `page`; picked by folder, or `layout:` in the frontmatter) and `mixins.pug`. `src/styles/site.css` and `src/images/` hold the styles and images.
+- `parcel/markdown.transformer.js` turns each markdown page into Pug for its layout; `lib/content.js` reads the markdown.
+- `public/` is copied into `dist/` unchanged, for files that need fixed URLs (`ads.txt`, `robots.txt`, `/favicon.ico`, the Tessera share image). `scripts/postbuild.mjs` copies it and writes `sitemap.xml`.
+
+To add a game: copy a file in `content/games/`, change the frontmatter and text, and put its screenshot in `src/images/`. It appears on the home page, in every "All games" list and in the sitemap.
 
 ### `juice-factory/` and `fuse/`
 
@@ -48,6 +62,10 @@ To add a game: add it to `games.json`, add `src/pages/games/<slug>.pug` (copy an
 - `public/` is copied as-is (robots, sitemap, and for Fuse its fonts, icons and `_headers`).
 
 Save data lives in `localStorage` (`juice-factory-v2` and `fuse0xac.v1`). Changing what's stored needs a migration; see `juice-factory/src/game/state.ts`.
+
+### `puzzle/`
+
+A single static page, served as it is.
 
 ## Deploying
 

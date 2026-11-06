@@ -2,15 +2,19 @@
   "name": "www",
   "private": true,
   "scripts": {
-    "dev": "parcel 'src/pages/**/*.pug'",
-    "build": "parcel build 'src/pages/**/*.pug' --no-source-maps && node scripts/postbuild.mjs",
+    "dev": "parcel 'content/**/*.md'",
+    "build": "parcel build 'content/**/*.md' --no-source-maps && node scripts/postbuild.mjs",
     "preview": "wrangler dev"
   },
   "devDependencies": {
     "@parcel/config-default": "^2.16.4",
     "@parcel/plugin": "^2.16.4",
     "@parcel/transformer-pug": "^2.16.4",
+    "markdown-it": "^14.3.3",
+    "markdown-it-attrs": "^4.5.0",
+    "markdown-it-deflist": "^3.0.1",
     "parcel": "^2.16.4",
-    "pug": "^3.0.4"
+    "pug": "^3.0.4",
+    "yaml": "^2.9.1"
   }
 }

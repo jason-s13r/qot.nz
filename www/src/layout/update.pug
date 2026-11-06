@@ -1,0 +1,14 @@
+//- content/updates/*.md: one update.
+extends base.pug
+
+block vars
+  - var page = { title: `${doc.title} · Qot. games`, description: doc.description, path: doc.path }
+
+block main
+  main
+    h1.page-title= doc.title
+    .prose
+      p.updated
+        time(datetime=doc.date)= doc.month
+      != doc.html
+      p: a(href="/updates") All updates

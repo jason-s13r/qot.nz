@@ -9,7 +9,14 @@
   "scripts": {
     "build": "pnpm -r build",
     "test": "pnpm -r test",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "dev:www": "pnpm --filter ./www dev",
+    "preview:www": "pnpm --filter ./www build --if-present && pnpm --filter ./www preview",
+    "dev:juice": "pnpm --filter ./juice-factory dev",
+    "preview:juice": "pnpm --filter ./juice-factory build --if-present && pnpm --filter ./juice-factory preview",
+    "dev:fuse": "pnpm --filter ./fuse dev",
+    "preview:fuse": "pnpm --filter ./fuse build --if-present && pnpm --filter ./fuse preview",
+    "preview:puzzle": "pnpm --filter ./puzzle preview"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",
