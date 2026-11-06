@@ -1,0 +1,14 @@
+packages:
+  - www
+  - juice-factory
+  - fuse
+  - puzzle
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': false
+  esbuild: true
+  lmdb: false
+  msgpackr-extract: false
+  sharp: false
+  workerd: true

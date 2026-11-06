@@ -8,38 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;800&display=swap">
-<style>
-:root{
-  --bg:#FFF4C9; --panel:#FFFFFF; --ink:#2D1A0A; --muted:#7D5F37; --line:#F0D98C;
-  --orange-deep:#D9530A; --leaf:#2E9A47;
-  --display:"Lilita One","Arial Rounded MT Bold","Trebuchet MS",sans-serif;
-  --body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#1C1209; --panel:#2A1B0D; --ink:#FFF0D2; --muted:#CDA977; --line:#4B331B;
-  --orange-deep:#FF6A00; --leaf:#4CC46A; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1C1209; --panel:#2A1B0D; --ink:#FFF0D2; --muted:#CDA977; --line:#4B331B;
-  --orange-deep:#FF6A00; --leaf:#4CC46A; color-scheme:dark}
-*{box-sizing:border-box}
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
-.wrap{max-width:680px;margin:0 auto}
-a{color:var(--orange-deep);font-weight:700}
-.back{font-weight:800;text-decoration:none}
-.back:hover{text-decoration:underline}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,6vw,44px);line-height:1.05;margin:18px 0 4px;color:var(--orange-deep);text-wrap:balance}
-.updated{color:var(--muted);font-weight:700;font-size:14px;margin:0 0 20px}
-.card{background:var(--panel);border:3px solid var(--ink);border-radius:20px;padding:6px 22px 14px}
-h2{font-family:var(--display);font-weight:400;font-size:22px;margin:22px 0 4px;color:var(--leaf)}
-p,ul{margin:6px 0}
-ul{padding-left:1.2em}
-li{margin:4px 0}
-.card{overflow-wrap:anywhere}
-footer{margin-top:28px;text-align:center;font-size:13px;color:var(--muted)}
-footer a{text-decoration:none}
-</style>
+<script type="module" src="/src/privacy.ts"></script>
 </head>
 <body>
 <div class="wrap">

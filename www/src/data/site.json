@@ -1,0 +1,21 @@
+{
+  "url": "https://qot.nz",
+  "adsenseAccount": "ca-pub-6757493813506328",
+  "kofi": "https://ko-fi.com/jason_s13r",
+  "author": { "name": "Jason", "url": "https://jason.schwarzenberger.co.nz/" },
+  "email": "jason@qot.nz",
+  "baseFonts": ["Grandstander:wght@700;800", "Nunito:wght@400;600;800"],
+  "footer": [
+    { "name": "About", "url": "/about" },
+    { "name": "What&rsquo;s new", "url": "/updates" },
+    { "name": "Contact", "url": "/contact" },
+    { "name": "Privacy", "url": "/privacy" }
+  ],
+  "pages": [
+    { "path": "/", "lastmod": "2026-10-30" },
+    { "path": "/about", "lastmod": "2026-10-30" },
+    { "path": "/updates", "lastmod": "2026-10-30" },
+    { "path": "/contact", "lastmod": "2026-10-30" },
+    { "path": "/privacy", "lastmod": "2026-10-30" }
+  ]
+}

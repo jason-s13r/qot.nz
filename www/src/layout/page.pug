@@ -1,0 +1,45 @@
+//- The shell for every qot.nz page. A page sets `page` in `block vars`:
+//-   title, description, path, and either `game` (a slug from games.json) or `fonts` / `bodyClass`.
+include mixins.pug
+
+block vars
+
+- const game = page.game ? gameBySlug(page.game) : null
+- const fonts = game ? game.fonts : page.fonts || []
+- const bodyClass = game ? game.tone : page.bodyClass
+
+doctype html
+html(lang="en-NZ")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover")
+    title= page.title
+    meta(name="description" content=page.description)
+    link(rel="canonical" href=site.url + page.path)
+    block head
+    meta(name="google-adsense-account" content=site.adsenseAccount)
+    link(rel="icon" href="~/src/images/favicon.ico" sizes="any")
+    link(rel="icon" href="~/src/images/favicon.svg" type="image/svg+xml")
+    link(rel="apple-touch-icon" href="~/src/images/apple-touch-icon.png")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href=fontsHref(fonts) rel="stylesheet")
+    link(rel="stylesheet" href="~/src/styles/site.css")
+  body(class=bodyClass)
+    .wrap
+      header.site-top
+        a.brand-sm(href="/") Qot#[span.dot .]#[span.games games]
+        a.kofi.kofi-sm(href=site.kofi target="_blank" rel="noopener")
+          span.heart(aria-hidden="true") &#9829;
+          span #[span.kofi-long Support on ]Ko-fi
+
+      block main
+
+      if game
+        +moreGames(game.slug)
+
+      footer.byline
+        p By #[a(href=site.author.url)= site.author.name].
+        nav.footer-links(aria-label="More")
+          each link in site.footer
+            a(href=link.url)!= link.name

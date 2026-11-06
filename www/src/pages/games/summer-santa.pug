@@ -1,0 +1,57 @@
+extends ../../layout/page.pug
+
+block vars
+  - var page = { title: "Summer Santa · Qot. games", description: "Summer Santa is a free co-op Christmas game for kids, made in New Zealand. How it plays, Santa's little jobs, playing with friends, and notes for grown-ups.", path: "/games/summer-santa", game: "summer-santa" }
+
+block main
+  main
+    +gameHero(game)
+      p.lede Be Santa on Christmas Eve: fly the sleigh from the snowy north down to a Kiwi summer, deliver presents, and bank the treats left out for you before sunrise.
+    article.prose
+      +screenshot("summer-santa.jpg", 1200, 675, "Summer Santa in play: Santa\'s sleigh and reindeer landing on the Log cabin roof in the snowy north, between the Mountain hut and the Village church, with the sack, clock and treats at the workshop along the top.")
+        | Up in the snowy north: the sleigh on the Log cabin roof, between the Mountain hut and the Village church.
+      h2 What it is
+      p Summer Santa is a co-op Christmas game for kids, made in New Zealand. It’s Christmas Eve and you’re Santa. Fly the sleigh from the snowy North Pole down to a Kiwi summer, deliver to 19 houses, and bank the treats people have left out for you before the sun comes up. Play on your own, or with friends in a private room.
+      p It runs in a web browser on phones, tablets and computers, in portrait or landscape, and you can add it to your home screen to play offline on your own.
+      h2 Getting ready
+      p Every night starts in the dressing room. Pick your hair, skin, hat, shirt, pants, coat and sack. In the snow, Santa wears the big coat; down in the summer you wear the outfit you chose. Some sacks hold more treats, some let you move faster, and some help with the jobs. New clothes cost bikkies in the shop, and once in a while a house leaves out clothes instead of a treat.
+      h2 Christmas Eve
+      ul
+        li
+          b Delivering.
+          |  Tap a house and the sleigh flies to its chimney. Families leave out treats for Santa: bikkies, mince pies, pineapple lumps, even a whole pavlova. They go into your sack.
+        li
+          b Full sack.
+          |  When your sack is full, fly back to the workshop to empty it.
+        li
+          b Banking.
+          |  Treats only count once they’re banked at the workshop. Anything still in your sack at sunrise is lost.
+        li
+          b Porch lights.
+          |  After you visit, a house’s light goes off for about a minute and a half. Late in the night some families go to bed for good, so plan your route.
+        li
+          b Sunrise.
+          |  The night ends when the clock runs out. You can also tap Leave to head back early with your sack.
+      h2 Little jobs
+      p Some houses ask Santa for a hand. Finish the job for bonus bikkies; fail and you end up covered in soot. The jobs include catching presents, whipping the cream, finding an elf, shooing seagulls, lighting the Christmas lights, closing the curtains, echoing moreporks, digging for a lost sleigh bell, and fixing a Christmas card.
+      h2 Playing with friends
+      p
+        | Tap 
+        b Play with friends
+        |  to make a room, and friends join with its five-letter code. Everyone flies the same street, shares the porch lights, and banks into one shared tin that everybody gets at sunrise. Some presents need two of you at the chimney. The host can lock the room once everyone’s in.
+      h2 After the night
+      p The results show how many bikkies you banked, with an award for each player. Spend your bikkies in the dressing room shop, and collect stickers in your sticker book for houses visited, jobs done and nights played.
+      h2 For grown-ups
+      ul
+        li No accounts, names or emails. Each device gets a random key, and progress is saved to the game’s server under that key.
+        li Rooms are private and can be locked. There’s no typed chat, only friendly emotes, and players get made-up names from the game’s own list.
+        li A Google ad may appear after a night. Ads are marked as for a children’s site, so they aren’t personalised.
+        li
+          b Keep safe
+          | , behind a grown-up check, lets you move a profile to another device, make a backup code, turn ads off, or delete everything.
+      p
+        | The full details are on the 
+        a(href="https://christmas.qot.nz/privacy") Summer Santa privacy page
+        | .
+      h2 A Kiwi Christmas
+      p Summer Santa is the Christmas companion to Trick or Treat. In New Zealand Christmas falls in summer, so Santa’s round runs from a snowy ski lodge all the way down to beach baches, a surf club and a campground, with pineapple lumps and pavlova among the treats.

@@ -1,0 +1,6 @@
+wrangler.jsonc
+.assetsignore
+package.json
+node_modules
+.wrangler
+.DS_Store

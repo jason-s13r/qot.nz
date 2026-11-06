@@ -1,0 +1,137 @@
+name: Release
+
+# Each site deploys from its own branch: Cloudflare Workers Builds watches
+# cf-www, cf-juice-factory, cf-fuse-0xac and cf-picture-puzzle, one per Worker. This workflow
+# moves those branches to main, but only for sites whose files changed since
+# the commit their branch points at. So each cf-* branch always names the
+# commit that's live on that site, and work on main deploys nothing until this
+# runs.
+#
+# Manual, like Tessera's release: a deploy is a decision. Pushes made with
+# GITHUB_TOKEN start no workflow here, but Cloudflare's GitHub app still gets
+# the webhook and builds the moved branch.
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Sites to deploy even if unchanged, comma-separated (www, juice-factory, fuse, puzzle), or "all"
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  # Each site's folder, and the branch its Worker deploys from.
+  SITES: >-
+    [
+      {"dir": "www", "branch": "cf-www"},
+      {"dir": "juice-factory", "branch": "cf-juice-factory"},
+      {"dir": "fuse", "branch": "cf-fuse-0xac"},
+      {"dir": "puzzle", "branch": "cf-picture-puzzle"}
+    ]
+  # Files outside a site's folder that still change what it builds.
+  SHARED: package.json pnpm-lock.yaml pnpm-workspace.yaml tsconfig.base.json .node-version
+
+jobs:
+  plan:
+    name: What needs deploying
+    runs-on: ubuntu-latest
+    outputs:
+      sha: ${{ steps.plan.outputs.sha }}
+      sites: ${{ steps.plan.outputs.sites }}
+      any: ${{ steps.plan.outputs.any }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # A site deploys when its cf-* branch doesn't exist yet, when anything
+      # under its folder or the shared files differs between that branch and
+      # main, or when it's named in `force`.
+      - name: Compare each site with its branch
+        id: plan
+        env:
+          FORCE: ${{ inputs.force }}
+        run: |
+          sha=$(git rev-parse HEAD)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Deploy plan for \`${sha:0:7}\`"
+            echo ""
+            echo "| Site | Branch | Live at | Deploy | Why |"
+            echo "|---|---|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          selected='[]'
+          while read -r site; do
+            dir=$(jq -r .dir <<<"$site")
+            branch=$(jq -r .branch <<<"$site")
+            live=$(git rev-parse --verify --quiet "refs/remotes/origin/$branch" || true)
+            why=''
+            if [[ ",${FORCE// /}," == *",$dir,"* || "$FORCE" == "all" ]]; then
+              why='forced'
+            elif [[ -z "$live" ]]; then
+              why='first deploy'
+            else
+              # shellcheck disable=SC2086
+              changed=$(git diff --name-only "$live" "$sha" -- "$dir/" $SHARED | wc -l)
+              if (( changed == 1 )); then why="1 file changed"; elif (( changed > 1 )); then why="$changed files changed"; fi
+            fi
+            if [[ -n "$why" ]]; then
+              selected=$(jq -c --argjson s "$site" '. + [$s]' <<<"$selected")
+              echo "| $dir | \`$branch\` | ${live:0:7} | yes | $why |" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "| $dir | \`$branch\` | ${live:0:7} | no | unchanged |" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done < <(jq -c '.[]' <<<"$SITES")
+
+          echo "sites=$selected" >> "$GITHUB_OUTPUT"
+          echo "any=$(jq 'length > 0' <<<"$selected")" >> "$GITHUB_OUTPUT"
+
+  # Per site: test, build, then move its branch. Sites run independently
+  # (fail-fast off), so a site that fails its tests or build keeps its cf-*
+  # branch where it was while the others still deploy.
+  #
+  # The push is plain, so a branch only ever moves forward: if something was
+  # pushed to a cf-* branch by hand, this fails rather than throwing it away.
+  release:
+    name: Release ${{ matrix.site.dir }}
+    needs: plan
+    if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to move the cf-* branches
+    strategy:
+      fail-fast: false
+      matrix:
+        site: ${{ fromJSON(needs.plan.outputs.sites) }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.plan.outputs.sha }}
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Test
+        run: pnpm --filter "./${{ matrix.site.dir }}" run --if-present test
+
+      - name: Build
+        run: pnpm --filter "./${{ matrix.site.dir }}" run --if-present build
+
+      - name: Point ${{ matrix.site.branch }} at ${{ needs.plan.outputs.sha }}
+        env:
+          SHA: ${{ needs.plan.outputs.sha }}
+          BRANCH: ${{ matrix.site.branch }}
+        run: |
+          git push origin "$SHA:refs/heads/$BRANCH"
+          echo "\`$BRANCH\` now points at \`$SHA\`; Workers Builds deploys it from there." >> "$GITHUB_STEP_SUMMARY"

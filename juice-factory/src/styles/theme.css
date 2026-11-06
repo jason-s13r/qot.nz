@@ -1,0 +1,49 @@
+/* Juice Factory colours and fonts, shared by the game and the privacy page. Dark mode follows the system setting. */
+
+:root {
+  --bg: #fff4c9;
+  --panel: #ffffff;
+  --ink: #2d1a0a;
+  --muted: #7d5f37;
+  --line: #f0d98c;
+  --orange: #ff7417;
+  --orange-deep: #d9530a;
+  --leaf: #2e9a47;
+  --on-leaf: #ffffff;
+  --juice: #ffb02e;
+  --juice-2: #ff8e1f;
+  --gold: #f2b705;
+  --berry: #c2185b;
+  --shadow: rgba(120, 70, 0, 0.18);
+  --display: "Lilita One", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1209;
+    --panel: #2a1b0d;
+    --ink: #fff0d2;
+    --muted: #cda977;
+    --line: #4b331b;
+    --orange: #ff8a33;
+    --orange-deep: #ff6a00;
+    --leaf: #4cc46a;
+    --on-leaf: #0e2412;
+    --juice: #e8961c;
+    --juice-2: #d9730f;
+    --gold: #ffca28;
+    --berry: #f06292;
+    --shadow: rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

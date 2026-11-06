@@ -1,0 +1,53 @@
+mixin chips(game)
+  .chips
+    each chip in game.chips
+      span.chip= chip
+
+//- A full game card, as on the home page.
+mixin gameCard(game)
+  li(class=game.card)
+    .head-row
+      h2: a(href=`/games/${game.slug}`)!= game.name
+    +chips(game)
+    p!= game.blurb
+    .foot
+      span.host= game.host
+      span.actions
+        a.more-link(href=`/games/${game.slug}`) About the game
+        a.play(href=`https://${game.host}/`) Play
+
+//- The hero at the top of a game page. The block is the lede paragraphs.
+mixin gameHero(game)
+  section(class=`${game.card.replace(/^card /, 'card hero ')}`)
+    .head-row: h1!= game.name
+    +chips(game)
+    block
+    .foot
+      span.host= game.host
+      a.play(href=`https://${game.host}/`) Play #{game.title}
+
+//- "All games", with the current game marked.
+mixin moreGames(current)
+  section.more(aria-labelledby="more-h")
+    h2#more-h All games
+    ul
+      each game in games
+        li
+          if game.slug === current
+            div(class=`${game.card} current` aria-current="page")
+              .head-row: h3!= game.name
+              p!= game.short
+          else
+            a(class=game.card href=`/games/${game.slug}`)
+              .head-row: h3!= game.name
+              p!= game.short
+
+//- A screenshot that links to the full-size image at /games/img/<name>.
+//- The link gets "?full" because Parcel drops an <a href> that points at the same file as an <img src>
+//- on the same page; the query makes it a separate asset, which parcel/stable-images.namer.js names.
+mixin screenshot(name, width, height, alt)
+  - const src = `~/src/images/${name}`
+  figure.shot
+    a(href=`${src}?full`): img(src=src width=width height=height alt=alt decoding="async")
+    figcaption
+      block

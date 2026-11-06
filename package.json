@@ -1,0 +1,19 @@
+{
+  "name": "qot.nz",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.28.11",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.158.0"
+  }
+}

@@ -1,0 +1,42 @@
+extends ../layout/page.pug
+
+block vars
+  - var page = { title: "What's new · Qot. games", description: "New games and changes to Qot. games.", path: "/updates" }
+
+block main
+  main
+    h1.page-title What’s new
+    .prose
+      p New games and changes to the old ones. The newest are at the top.
+      h2 October 2026
+      ul.log
+        li
+          b Fuse 0xAC is out
+          | A puzzle game about guarding one number: check the packets, decode the hex and keep 172 locked. 
+          a(href="/games/fuse") Read about Fuse 0xAC
+          | .
+        li
+          b Tessera moves to qot.nz
+          | The grid territory game now lives at tessera.qot.nz, with online games that keep running for days. 
+          a(href="/games/tessera") Read about Tessera
+          | .
+        li
+          b Egg Hunt is out
+          | An Easter egg hunt in a Kiwi autumn garden, the third of the co-op seasonal games. 
+          a(href="/games/egg-hunt") Read about Egg Hunt
+          | .
+        li
+          b Summer Santa is out
+          | Santa’s Christmas Eve round from the North Pole to a Kiwi summer, built on the same street as Trick or Treat. 
+          a(href="/games/summer-santa") Read about Summer Santa
+          | .
+        li
+          b Trick or Treat is out
+          | A co-op Halloween game for kids: 19 houses, 19 tricks, and a dress-up shop. 
+          a(href="/games/trick-or-treat") Read about Trick or Treat
+          | .
+        li
+          b Juice Factory is out
+          | The first Qot. game: a clicker game about squeezing juice from one orange. 
+          a(href="/games/juice-factory") Read about Juice Factory
+          | .

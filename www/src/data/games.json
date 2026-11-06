@@ -1,0 +1,111 @@
+[
+  {
+    "slug": "tessera",
+    "title": "Tessera",
+    "name": "Tessera",
+    "card": "card tessera",
+    "tone": "tone-tessera",
+    "fonts": [
+      "Fredoka:wght@500;600;700"
+    ],
+    "chips": [
+      "Strategy",
+      "Solo",
+      "Multiplayer"
+    ],
+    "host": "tessera.qot.nz",
+    "lastmod": "2026-11-02",
+    "blurb": "A territory game in your browser, after the grid game <em>Empire Attack</em>. Push out from your capital, attack where you're strong, and outflank a neighbour before they outflank you. Play bots on your own, or online with other people in games that run for days. Whoever holds the most ground when time runs out wins.",
+    "short": "Claim the map, one tile at a time, solo or in online games that run for days."
+  },
+  {
+    "slug": "juice-factory",
+    "title": "Juice Factory",
+    "name": "Juice <span class=\"factory\">Factory</span>",
+    "card": "card juice",
+    "tone": "tone-juice",
+    "fonts": [
+      "Lilita+One"
+    ],
+    "chips": [
+      "Clicker"
+    ],
+    "host": "juice-factory.qot.nz",
+    "lastmod": "2026-10-30",
+    "blurb": "A clicker game about making juice. You have a fruit and a dream: squeeze juice by hand, sell it by the cup, and pour the money back into better squeezers, machines and shops until the juice and the dollars really climb. There's always the next upgrade to save for.",
+    "short": "A clicker game about making juice. Squeeze it, sell it, build a factory."
+  },
+  {
+    "slug": "trick-or-treat",
+    "title": "Trick or Treat",
+    "name": "Trick or Treat",
+    "card": "card titlescreen halloween",
+    "tone": "tone-halloween",
+    "fonts": [
+      "Fredoka:wght@500;600;700"
+    ],
+    "chips": [
+      "Co-op",
+      "Halloween"
+    ],
+    "host": "halloween.qot.nz",
+    "lastmod": "2026-10-30",
+    "blurb": "Dress up and knock on every door of a spooky street before midnight. Most houses hand out treats and a few play tricks, and every door has a mini-game to beat. Bank your lollies at home, then spend them on new costumes in the dress-up shop. Play solo or team up with friends in a private room.",
+    "short": "Knock on every door of a spooky street and bank your lollies before midnight."
+  },
+  {
+    "slug": "summer-santa",
+    "title": "Summer Santa",
+    "name": "Summer Santa",
+    "card": "card titlescreen christmas",
+    "tone": "tone-christmas",
+    "fonts": [
+      "Fredoka:wght@500;600;700"
+    ],
+    "chips": [
+      "Co-op",
+      "Christmas"
+    ],
+    "host": "christmas.qot.nz",
+    "lastmod": "2026-10-30",
+    "blurb": "It&rsquo;s Christmas Eve and you&rsquo;re Santa. Fly the sleigh from the snowy North Pole down to a Kiwi summer, drop presents down 19 chimneys and collect what&rsquo;s been left out for you: bikkies, mince pies, even a whole pavlova. Do the little jobs at each house for bonus bikkies, and be home before sunrise.",
+    "short": "Fly Santa's sleigh to a Kiwi summer and bank the treats before sunrise."
+  },
+  {
+    "slug": "egg-hunt",
+    "title": "Egg Hunt",
+    "name": "Egg Hunt",
+    "card": "card titlescreen easter",
+    "tone": "tone-easter",
+    "fonts": [
+      "Fredoka:wght@500;600;700"
+    ],
+    "chips": [
+      "Co-op",
+      "Easter"
+    ],
+    "host": "easter.qot.nz",
+    "lastmod": "2026-10-30",
+    "blurb": "Easter morning in a Kiwi autumn garden. Check the flower bed, the letterbox, the hen house and the garden shed, though not every hiding spot has a chocolate egg. Get your haul back to the picnic blanket before lunch, on your own or with the whole family.",
+    "short": "Search a Kiwi autumn garden for chocolate eggs before lunch."
+  },
+  {
+    "slug": "fuse",
+    "title": "Fuse 0xAC",
+    "name": "FUSE <span class=\"hex\">0xAC</span>",
+    "card": "card fuse",
+    "tone": "tone-fuse",
+    "fonts": [
+      "VT323",
+      "JetBrains+Mono:wght@400;700"
+    ],
+    "chips": [
+      "Puzzle",
+      "Numbers"
+    ],
+    "host": "fuse.qot.nz",
+    "lastmod": "2026-10-30",
+    "blurb": "A puzzle game about guarding one number. Address 0xAC holds 172, and everyone wants it changed. Inspect each incoming packet, decode the hex, check the signatures and spot the forgeries. Let three bad packets through and the fuse breaks.",
+    "short": "One number, one checkpoint. Spot the forged packets before 172 becomes 173."
+  }
+]

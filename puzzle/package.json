@@ -1,0 +1,7 @@
+{
+  "name": "puzzle",
+  "private": true,
+  "scripts": {
+    "preview": "wrangler dev"
+  }
+}

@@ -2,7 +2,7 @@
   "name": "fuse-0xac",
   "compatibility_date": "2026-11-01",
   "assets": {
-    "directory": ".",
+    "directory": "./dist",
     "not_found_handling": "404-page"
   }
 }
